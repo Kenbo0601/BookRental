@@ -22,7 +22,7 @@ namespace BookRental.Models
         {
             get
             {
-                var param = new StringBuilder("@/");
+                var param = new StringBuilder("/");
 
                 if(BookId != null && BookId > 0)
                 {
