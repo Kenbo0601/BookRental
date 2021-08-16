@@ -114,3 +114,4 @@ C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.pdb
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.AddBookAndGenreClass.resources
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.csproj.GenerateResource.cache
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.AddPublisherToBookModel.resources

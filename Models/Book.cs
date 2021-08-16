@@ -33,7 +33,7 @@ namespace BookRental.Models
 
         [Required]
         [DataType(DataType.Currency)]
-        public double price { get; set; }
+        public double Price { get; set; }
 
         [Required]
         [DisplayFormat(DataFormatString ="{0: MMM dd yyyy")]
@@ -54,5 +54,8 @@ namespace BookRental.Models
 
         [Required]
         public string ProductDimensions { get; set; }
+
+        [Required]
+        public string Publisher { get; set; }
     }
 }
