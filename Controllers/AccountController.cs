@@ -154,6 +154,7 @@ namespace BookRental.Controllers
 
         //
         // POST: /Account/Register
+        //Password must contain at least one both upper case and lower case letter, digits, and non letter or digits
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -176,7 +177,6 @@ namespace BookRental.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-
                     using (var db = ApplicationDbContext.Create())
                     {
                         model.MembershipTypes = db.MembershipTypes.ToList();
