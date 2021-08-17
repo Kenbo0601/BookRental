@@ -185,6 +185,9 @@
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MembershipTypeController.cs" />
+    <Compile Include="Extensions\DateRangeAttribute.cs" />
+    <Compile Include="Extensions\ThumbnailExtension.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,6 +199,22 @@
     <Compile Include="Migrations\202108162045580_AddPublisherToBookModel.Designer.cs">
       <DependentUpon>202108162045580_AddPublisherToBookModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108162121127_AddMembershipTypeToDatabase.cs" />
+    <Compile Include="Migrations\202108162121127_AddMembershipTypeToDatabase.Designer.cs">
+      <DependentUpon>202108162121127_AddMembershipTypeToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108162122514_SeedMembershipTypeDatabase.cs" />
+    <Compile Include="Migrations\202108162122514_SeedMembershipTypeDatabase.Designer.cs">
+      <DependentUpon>202108162122514_SeedMembershipTypeDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108162308256_AddFiledsToMembershipTable.cs" />
+    <Compile Include="Migrations\202108162308256_AddFiledsToMembershipTable.Designer.cs">
+      <DependentUpon>202108162308256_AddFiledsToMembershipTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108170052487_whatDidIChange.cs" />
+    <Compile Include="Migrations\202108170052487_whatDidIChange.Designer.cs">
+      <DependentUpon>202108170052487_whatDidIChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -203,9 +222,13 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IndividualButtonPartial.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\ThumbnailModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utility\SD.cs" />
     <Compile Include="ViewModel\BookViewModel.cs" />
+    <Compile Include="ViewModel\ThumbnailBoxViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -213,6 +236,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\pride.jpg" />
+    <Content Include="Content\thumbnail.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -281,6 +305,12 @@
     <Content Include="Views\Book\Details.cshtml" />
     <Content Include="Views\Book\Edit.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
+    <Content Include="Views\MembershipType\Create.cshtml" />
+    <Content Include="Views\MembershipType\Delete.cshtml" />
+    <Content Include="Views\MembershipType\Details.cshtml" />
+    <Content Include="Views\MembershipType\Edit.cshtml" />
+    <Content Include="Views\MembershipType\Index.cshtml" />
+    <Content Include="Views\Shared\_ThumbnailAreaPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -304,6 +334,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108162045580_AddPublisherToBookModel.resx">
       <DependentUpon>202108162045580_AddPublisherToBookModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108162121127_AddMembershipTypeToDatabase.resx">
+      <DependentUpon>202108162121127_AddMembershipTypeToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108162122514_SeedMembershipTypeDatabase.resx">
+      <DependentUpon>202108162122514_SeedMembershipTypeDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108162308256_AddFiledsToMembershipTable.resx">
+      <DependentUpon>202108162308256_AddFiledsToMembershipTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108170052487_whatDidIChange.resx">
+      <DependentUpon>202108170052487_whatDidIChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

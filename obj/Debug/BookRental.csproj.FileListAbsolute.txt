@@ -115,3 +115,7 @@ C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.AddBookAndGenreClass.resources
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.csproj.GenerateResource.cache
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.AddPublisherToBookModel.resources
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.AddMembershipTypeToDatabase.resources
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.SeedMembershipTypeDatabase.resources
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.AddFiledsToMembershipTable.resources
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.whatDidIChange.resources
