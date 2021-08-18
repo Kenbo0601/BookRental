@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using BookRental.Models;
+using System.Configuration;
 
 namespace BookRental
 {
@@ -54,15 +55,16 @@ namespace BookRental
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            var config = ConfigurationManager.AppSettings;
+            app.UseFacebookAuthentication(
+               appId: config["facebookId"],
+               appSecret: config["facebookSecrets"]);
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = config["googleId"],
+                ClientSecret = config["googleSecrets"]
+            });
         }
     }
 }
