@@ -27,6 +27,7 @@ namespace BookRental
                       "~/Content/bootstrap.css",
                       "~/Content/thumbnail.css",
                       "~/Content/social.css",
+                      "~/Content/BookDetail.css",
                       "~/Content/site.css"));
         }
     }

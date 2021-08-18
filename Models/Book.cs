@@ -36,7 +36,7 @@ namespace BookRental.Models
         public double Price { get; set; }
 
         [Required]
-        [DisplayFormat(DataFormatString ="{0: MMM dd yyyy")]
+        [DisplayFormat(DataFormatString ="{0: MM/dd/yyyy")]
         public DateTime? DateAdded { get; set; }
 
         [Required]
@@ -46,7 +46,7 @@ namespace BookRental.Models
 
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0: MMM dd yyyy")]
+        [DisplayFormat(DataFormatString ="{0: MM/dd/yyyy")]
         public DateTime publicationDate { get; set; }
 
         [Required]

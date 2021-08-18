@@ -28,14 +28,14 @@ namespace BookRental.ViewModel
         [DataType(DataType.Currency)]
         public double Price { get; set; }
 
-        [DisplayFormat(DataFormatString ="{0: MMM dd yyyy")]
+        [DisplayFormat(DataFormatString ="{0: MM/dd/yyyy")]
         [DisplayName("Date Added")]
         public DateTime? DateAdded { get; set; }
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0: MMM dd yyyy")]
+        [DisplayFormat(DataFormatString ="{0: MM/dd/yyyy")]
         [DisplayName("Publication Date")]
         public DateTime publicationDate { get; set; }
         public int Pages { get; set; }
@@ -47,17 +47,17 @@ namespace BookRental.ViewModel
 
         //Rental Details 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0: MMM dd yyyy")]
+        [DisplayFormat(DataFormatString ="{0: MM/dd/yyyy")]
         [DisplayName("Start Date")]
         public DateTime? StartDate { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0: MMM dd yyyy")]
+        [DisplayFormat(DataFormatString ="{0: MM/dd/yyyy")]
         [DisplayName("Actual End Date")]
         public DateTime? ActualEndDate { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0: MMM dd yyyy")]
+        [DisplayFormat(DataFormatString ="{0: MM/dd/yyyy")]
         [DisplayName("Scheduled End Date")]
         public DateTime? ScheduledEndDate { get; set; }
         
@@ -77,6 +77,7 @@ namespace BookRental.ViewModel
 
         //User details
         public string UserId { get; set; }
+        public string Email { get; set; }
 
         [DisplayName("First Name")]
         public string FirstName { get; set; }
@@ -88,7 +89,7 @@ namespace BookRental.ViewModel
 
         [DisplayName("Birth Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString ="{0: MMM dd yyyy")]
+        [DisplayFormat(DataFormatString ="{0: MM/dd/yyyy")]
         public DateTime BirthDate { get; set; }
     }
 }
