@@ -1,0 +1,58 @@
+﻿@model BookRental.ViewModel.BookRentalViewModel
+@using BookRental.Utility
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using(Html.BeginForm("Reserve", "BookRent"))
+{
+    @Html.AntiForgeryToken();
+
+    <div class="row">
+        @*Book Image*@
+        <div class="col-sm-3 col-xs-4">
+            <img class="thumbnail-img" src="@Model.ImageUrl" alt="" style="width: 100%; height: auto; padding: 10px" />
+        </div>
+
+         @*Book Title and description*@
+        <div class="col-sm-6 col-xs-8">
+            <div>
+                <h2><b>@Model.Title</b></h2>
+                <h5> by @Model.Author</h5>
+            </div>
+            <div>
+                <br /> 
+                <span>@Html.Raw(Model.Description)</span>
+            </div><br />
+        </div> 
+
+        @*Book Price and other book details*@
+        <div class="col-sm-3 col-xs-12">
+            <div>
+                @{ 
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = SD.OneMonth,
+                        Value = SD.OneMonthCount,
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = SD.SixMonth,
+                        Value = SD.SixMonthCount,
+                    });
+                }
+
+
+                @if(Model.rentalPriceOneMonth != 0 && Model.rentalPriceSixMonth != 0)
+                {
+                    //User is logged in and user is not admin user
+                    <div class="form-control" style="height: 350px;">
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
