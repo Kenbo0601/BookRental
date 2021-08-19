@@ -21,6 +21,7 @@ namespace BookRental
 
             bundles.Add(new ScriptBundle("~/bundles/bookRentalJs").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/typeahead.bundle.min.js",
                       "~/Scripts/AdminMenu.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -28,6 +29,7 @@ namespace BookRental
                       "~/Content/thumbnail.css",
                       "~/Content/social.css",
                       "~/Content/BookDetail.css",
+                      "~/Content/typeahead.css",
                       "~/Content/site.css"));
         }
     }

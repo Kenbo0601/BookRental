@@ -1,6 +1,7 @@
 ﻿using BookRental.Models;
 using BookRental.Utility;
 using BookRental.ViewModel;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace BookRental.Controllers
     public class BookRentController : Controller
     {
         private ApplicationDbContext db;
+
         public BookRentController()
         {
             db = ApplicationDbContext.Create();
@@ -29,7 +31,7 @@ namespace BookRental.Controllers
 
                 return View(model);
             }
-            return View();
+            return View(new BookRentalViewModel());
         }
         
         [HttpPost]
@@ -92,7 +94,49 @@ namespace BookRental.Controllers
         // GET: BookRent
         public ActionResult Index()
         {
-            return View();
+            string userid = User.Identity.GetUserId();
+
+            var model = from br in db.BookRental
+                        join b in db.Books on br.BookId equals b.id
+                        join u in db.Users on br.UserId equals u.Id
+
+                        select new BookRentalViewModel
+                        {
+                            BookId = b.id,
+                            RentalPrice = br.RentalPrice,
+                            Price = b.Price,
+                            Pages = b.Pages,
+                            FirstName = u.FirstName,
+                            LastName = u.LastName,
+                            BirthDate = u.BirthDate,
+                            ScheduledEndDate = br.ScheduledEndDate,
+                            Author = b.Author,
+                            Availability = b.Availability,
+                            DateAdded = b.DateAdded,
+                            Description = b.Description,
+                            Email = u.Email,
+                            GenreId = b.GenreId,
+                            Genre = db.Genres.Where(g => g.Id.Equals(b.GenreId)).FirstOrDefault(),
+                            ISBN = b.ISBN,
+                            ImageUrl = b.ImageUrl,
+                            ProductDimensions = b.ProductDimensions,
+                            publicationDate = b.publicationDate,
+                            Publisher = b.Publisher,
+                            RentalDuration = br.RentalDuration,
+                            Status = br.Status.ToString(),
+                            Title = b.Title,
+                            UserId = u.Id,
+                            Id = br.Id,
+                            StartDate = br.StartDate
+                        };
+            
+            //check if the user is admin. if not, user can only see their books
+            if(!User.IsInRole(SD.AdminUserRole))
+            {
+                model = model.Where(u => u.UserId.Equals(userid));
+            }
+
+            return View(model.ToList());
         }
 
         protected override void Dispose(bool disposing)
