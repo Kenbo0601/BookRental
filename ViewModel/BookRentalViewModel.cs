@@ -1,4 +1,5 @@
 ﻿using BookRental.Models;
+using BookRental.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,5 +92,17 @@ namespace BookRental.ViewModel
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0: MM/dd/yyyy")]
         public DateTime BirthDate { get; set; }
+        
+        //TODO: finish the implementation here 
+        //public string actionName
+        //{
+        //    get
+        //    {
+        //        if(Status.ToLower().Contains(SD.RequestedLower))
+        //        {
+
+        //        }
+        //    }
+        //}
     }
 }

@@ -135,3 +135,7 @@ C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\Googl
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\Google.Apis.Core.xml
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.addBookRentalModel.resources
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.addRentalDurationToBookRentModel.resources
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\PagedList.dll
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\PagedList.Mvc.dll
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\PagedList.xml
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\PagedList.Mvc.xml

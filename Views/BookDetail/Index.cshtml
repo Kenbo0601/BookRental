@@ -72,7 +72,7 @@
                         }
                         else
                         {
-                             <button type="submit" class="btn btn-danger">
+                             <button type="submit" class="btn btn-danger disabled">
                                 <span class="glyphicon glyphicon-thumbs-down"></span> Unavailable
                             </button>
                         }
@@ -161,6 +161,8 @@
                     &nbsp; &nbsp;  &nbsp; &nbsp; @Html.DisplayFor(m => m.Pages)
                 </dd>
             </dl>
+
+            @Html.HiddenFor(m=>m.BookId)
 
 
         </div>

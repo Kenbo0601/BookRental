@@ -1,2 +1,5 @@
 AppSecrets.config
 
+# SQL Server files
+*.mdf
+*.ldf
