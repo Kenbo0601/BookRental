@@ -23,6 +23,10 @@ textarea {
     max-width: 350px;
 }
 
+.navbar {
+    background-color: #6A5ACD;
+}
+
 
 .table-header {
     background-color: #cee7ff;

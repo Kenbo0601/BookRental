@@ -26,6 +26,7 @@ namespace BookRental.Controllers.Api
             return Ok(bookQuery.ToList());
         }
 
+
         //Price or Availability (price/avail)
         public IHttpActionResult Get(string type, string isbn=null, string rentalDuration=null, string email=null)
         {
