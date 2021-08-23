@@ -12,6 +12,7 @@ using System.Net;
 
 namespace BookRental.Controllers
 {
+    [Authorize] //does not allow anyone to access to the bookrent page unless they are logged in
     public class BookRentController : Controller
     {
         private ApplicationDbContext db;
@@ -303,6 +304,53 @@ namespace BookRental.Controllers
             return RedirectToAction("Index");
         }
         
+        //Delete GET
+        public ActionResult Delete(int? id)
+        {
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            
+            //find a rental record from dabase based on the id
+            BookRent bookRent = db.BookRental.Find(id);
+
+            var model = getVMFromBookRent(bookRent);
+
+            if(model==null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int Id)
+        {
+            //invalid request
+            if(Id == 0)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            
+            //Find the book from the database 
+            BookRent bookRent = db.BookRental.Find(Id);
+
+            var bookInDb = db.Books.Where(b => b.id.Equals(bookRent.BookId)).FirstOrDefault();
+            if(!bookRent.Status.ToString().Equals("Rented"))
+            {
+                bookInDb.Availability += 1;
+            }
+
+            db.BookRental.Remove(bookRent);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+        
         //PickUp GET
         public ActionResult PickUp(int? id)
         {
@@ -384,7 +432,7 @@ namespace BookRental.Controllers
             
             //Find the book from the database and update the status
             BookRent bookRent = db.BookRental.Find(model.Id);
-            bookRent.Status = BookRent.StatusEnum.Rented;
+            bookRent.Status = BookRent.StatusEnum.Closed;
             bookRent.AdditionalCharge = model.AdditionalCharge;
 
             Book bookInDb = db.Books.Find(bookRent.BookId);
