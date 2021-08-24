@@ -19,12 +19,14 @@ namespace BookRental.Controllers
         {
             db = ApplicationDbContext.Create();
         }
+
         // GET: BookDetail
         public ActionResult Index(int id)
         {
+            //identify the user
             var userid = User.Identity.GetUserId();
             var user = db.Users.FirstOrDefault(u => u.Id == userid);
-
+            
             var bookModel = db.Books.Include(b => b.Genre).SingleOrDefault(b => b.id == id);
 
             var rentalPrice = 0.0;

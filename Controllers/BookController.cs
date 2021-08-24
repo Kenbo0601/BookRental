@@ -32,7 +32,9 @@ namespace BookRental.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Book book = db.Books.Find(id);
+
             if (book == null)
             {
                 return HttpNotFound();

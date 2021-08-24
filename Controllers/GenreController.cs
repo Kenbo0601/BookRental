@@ -15,12 +15,13 @@ namespace BookRental.Controllers
 
         public GenreController()
         {
-            db = new ApplicationDbContext();
+            db = ApplicationDbContext.Create();
         }
 
         // GET: Genre
         public ActionResult Index()
         {
+            //retrieving genres from the database, converting it to the list, and passing it to the view 
             return View(db.Genres.ToList());
         }
         
