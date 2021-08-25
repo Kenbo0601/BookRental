@@ -139,3 +139,4 @@ C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\Paged
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\PagedList.Mvc.dll
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\PagedList.xml
 C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\bin\PagedList.Mvc.xml
+C:\Users\Kenichi Sakamoto\source\repos\Kenbo0601\BookRental\BookRental\obj\Debug\BookRental.Migrations.addRentalCountToUser.resources

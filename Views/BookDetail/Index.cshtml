@@ -76,6 +76,11 @@
                                 <span class="glyphicon glyphicon-thumbs-down"></span> Unavailable
                             </button>
                         }
+
+                        @if(Model.RentalCount == 5)
+                        {
+                            <h4 style="color: red;">20% Discount!</h4>
+                        }
                     </div>
                 }
                 else

@@ -153,7 +153,7 @@ namespace BookRental.Controllers
                 model = model.Where(u => u.UserId.Equals(userid));
             }
 
-            return View(model.ToList().ToPagedList(pageNumber ?? 1,5));
+            return View(model.ToList().ToPagedList(pageNumber ?? 1,10)); //10 rows for each page 
         }
         
         [HttpPost]
@@ -434,6 +434,18 @@ namespace BookRental.Controllers
             BookRent bookRent = db.BookRental.Find(model.Id);
             bookRent.Status = BookRent.StatusEnum.Closed;
             bookRent.AdditionalCharge = model.AdditionalCharge;
+            
+            //Find the user and increment the rental count for this user
+            var user = db.Users.FirstOrDefault(u => u.Id == bookRent.UserId);
+            //If user rented books 5 times, reset the counter for the next discount service
+            if (user.RentalCount < 5)
+            {
+                user.RentalCount += 1;
+            }
+            else
+            {
+                user.RentalCount = 0; //rentalCount = 5, so reset the counter 
+            }
 
             Book bookInDb = db.Books.Find(bookRent.BookId);
             bookInDb.Availability += 1;

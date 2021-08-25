@@ -16,6 +16,7 @@ namespace BookRental.Models
         public DateTime BirthDate { get; set; }
         public bool Disable { get; set; }
         public int MembershipTypeId { get; set; }
+        public int RentalCount { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

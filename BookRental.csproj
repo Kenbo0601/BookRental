@@ -257,6 +257,10 @@
     <Compile Include="Migrations\202108180218024_addRentalDurationToBookRentModel.Designer.cs">
       <DependentUpon>202108180218024_addRentalDurationToBookRentModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108250049306_addRentalCountToUser.cs" />
+    <Compile Include="Migrations\202108250049306_addRentalCountToUser.Designer.cs">
+      <DependentUpon>202108250049306_addRentalCountToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -422,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108180218024_addRentalDurationToBookRentModel.resx">
       <DependentUpon>202108180218024_addRentalDurationToBookRentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108250049306_addRentalCountToUser.resx">
+      <DependentUpon>202108250049306_addRentalCountToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

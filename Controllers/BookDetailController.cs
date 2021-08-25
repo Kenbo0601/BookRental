@@ -39,9 +39,18 @@ namespace BookRental.Controllers
                                  join m in db.MembershipTypes on u.MembershipTypeId equals m.Id
                                  where u.Id.Equals(userid)
                                  select new { m.ChargeRateOneMonth, m.ChargeRateSixMonth };
-
-                oneMonthRental = Convert.ToDouble(bookModel.Price) * Convert.ToDouble(chargeRate.ToList()[0].ChargeRateOneMonth) / 100;
-                sixMonthRental = Convert.ToDouble(bookModel.Price) * Convert.ToDouble(chargeRate.ToList()[0].ChargeRateSixMonth) / 100;
+                
+                //If rental count is 5, give this user 20% off
+                if (user.RentalCount == 5)
+                {
+                    oneMonthRental = (Convert.ToDouble(bookModel.Price) * Convert.ToDouble(chargeRate.ToList()[0].ChargeRateOneMonth) / 100) * 0.2;
+                    sixMonthRental = (Convert.ToDouble(bookModel.Price) * Convert.ToDouble(chargeRate.ToList()[0].ChargeRateSixMonth) / 100) * 0.2;
+                }
+                else //regular price for the book 
+                {
+                    oneMonthRental = Convert.ToDouble(bookModel.Price) * Convert.ToDouble(chargeRate.ToList()[0].ChargeRateOneMonth) / 100;
+                    sixMonthRental = Convert.ToDouble(bookModel.Price) * Convert.ToDouble(chargeRate.ToList()[0].ChargeRateSixMonth) / 100;
+                }
             }
 
             BookRentalViewModel model = new BookRentalViewModel
@@ -65,6 +74,7 @@ namespace BookRental.Controllers
                 rentalPriceOneMonth = oneMonthRental,
                 rentalPriceSixMonth = sixMonthRental,
                 Publisher = bookModel.Publisher,
+                RentalCount = user.RentalCount,
             };
 
             return View(model);
